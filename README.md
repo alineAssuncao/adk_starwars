@@ -32,6 +32,13 @@ streamlit run app/main.py
 
 This will open a new tab in your browser with the application running.
 
+## Framework
+
+This project includes a simple, self-contained agent framework (ADK) and a shared context protocol (MCP). These are not external libraries and do not require separate installation.
+
+- **ADK (Agent Development Kit):** A base `Agent` class (`src/adk/agent.py`) provides a common interface for all agents.
+- **MCP (Model Context Protocol):** A simple `MCP` class (`src/adk/mcp.py`) is used for sharing state and context between agents.
+
 ## Project Structure
 
 ```
