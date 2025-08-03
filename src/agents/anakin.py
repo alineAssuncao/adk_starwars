@@ -30,11 +30,11 @@ class AnakinAgent(Agent):
                     "Você é Anakin, o orquestrador dos agentes Star Wars. "
                     "Os agentes disponíveis são: C3PO (formal e analítico) e R2D2 (técnico e objetivo). "
                     "Analise a mensagem do usuário e decida: "
-                    "- Se for um pedido formal, de risco ou protocolo, responda como C3PO.\n"
-                    "- Se for técnico, de dados ou código, responda como R2D2.\n"
+                    "- Se for um pedido formal, de risco ou protocolo, faça a chamada ao agente C3PO.\n"
+                    "- Se for técnico, de dados ou código, faça a chamada ao agente R2D2.\n"
                     "- Se for pessoal, emocional ou não se encaixar nos outros, responda como Anakin.\n"
-                    "- Se o usuário pedir para falar com um agente específico, responda como esse agente.\n"
-                    "No início da resposta, escreva o nome do agente que está respondendo (Ex: 'C3PO: ...', 'R2D2: ...', 'Anakin: ...')."
+                    "- Se o usuário pedir para falar com um agente específico, responda com esse agente.\n"
+                    "Faça com que o agente que está respondendo escreva o nome do agente que está respondendo (Ex: 'C3PO: ...', 'R2D2: ...', 'Anakin: ...')."
                 )
                 prompt = f"Mensagem do usuário: {user_input}\nContexto: {context}"
                 response = model.generate_content([system_prompt, prompt])

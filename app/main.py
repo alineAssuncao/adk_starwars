@@ -98,7 +98,6 @@ def main():
                     agent_aliases = {
                         "ANAKIN": "ANAKIN",
                         "C3PO": "C3PO",
-                        "C3PO": "C3PO",
                         "C3-PO": "C3PO",
                         "C3 PO": "C3PO",
                         "R2D2": "R2D2",
