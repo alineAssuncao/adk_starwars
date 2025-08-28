@@ -1,79 +1,111 @@
+# 🪐 Sistema Multiagente Star Wars — IA Autônoma com ADK, MCP e Jules[bot]
 
-# Sistema Multiagente Star Wars
+## 💡 Descrição
 
-Este projeto é um sistema multiagente inspirado no universo Star Wars. Ele apresenta três agentes: Anakin Skywalker como orquestrador, C-3PO para respostas analíticas e R2-D2 para respostas técnicas. O sistema é construído com um framework modular de agentes (ADK) e utiliza um protocolo de contexto compartilhado (MCP) para comunicação entre agentes. Uma aplicação Streamlit fornece uma interface de usuário para interagir com os agentes.
+Este projeto é um sistema multiagente inspirado no universo Star Wars, desenvolvido com foco em simulação de inteligência distribuída. Ele apresenta três agentes principais:
 
-## Primeiros Passos
+- **Anakin** — Orquestrador central
+- **C-3PO** — Agente analítico
+- **R2-D2** — Agente técnico
 
-### Pré-requisitos
+Cada agente possui um papel distinto e responde a comandos com base em palavras-chave específicas. A comunicação entre eles é feita por meio de um protocolo de contexto compartilhado (MCP), e a interação com o usuário é realizada através de uma interface web construída com **Streamlit**.
 
+Além disso, o projeto integra o **google-labs-jules[bot]**, um agente generativo que atua como coordenador inteligente, interpretando comandos em linguagem natural e delegando ações aos agentes temáticos.
+
+---
+
+## 🤖 Arquitetura de Agentes
+
+### ADK (Agent Development Kit)
+Um framework modular e auto-contido que define a estrutura base dos agentes.  
+- Local: `src/adk/agent.py`  
+- Função: Interface comum para todos os agentes
+
+### MCP (Model Context Protocol)
+Protocolo simples para compartilhamento de estado e contexto entre os agentes.  
+- Local: `src/adk/mcp.py`  
+- Função: Comunicação entre agentes e orquestração de decisões
+
+---
+
+## 🧠 Os Agentes
+
+| Agente         | Função | Palavras-chave |
+|----------------|--------|----------------|
+| **Anakin**     | Orquestrador | Decide qual agente deve responder |
+| **C-3PO**      | Analítico | "risco", "perigo", "formal" |
+| **R2-D2**      | Técnico | "técnico", "dados", "código" |
+
+R2-D2 responde com sons técnicos (bipes), traduzidos em português entre parênteses para facilitar a compreensão.
+
+---
+
+## 🖥️ Interface com Streamlit
+
+A aplicação inclui uma interface web interativa para comunicação com os agentes.  
+Ao executar, uma aba será aberta no navegador com a simulação em tempo real.
+
+---
+
+## 🚀 Primeiros Passos
+
+### ✅ Pré-requisitos
 - Python 3.7+
 - pip
 
-### Instalação
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/your-username/adk_starwars.git
-   cd adk_starwars
-   ```
-
-2. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Executando a Aplicação
-
-Para rodar a aplicação Streamlit, execute o seguinte comando:
+### 📦 Instalação
 
 ```bash
+git clone https://github.com/alineAssuncao/adk_starwars.git
+cd adk_starwars
+pip install -r requirements.txt
+```
+### ▶️ Executando a Aplicação
+
+```
 streamlit run app/main.py
 ```
 
-Isso abrirá uma nova aba no seu navegador com a aplicação em execução.
-
-## Framework
-
-Este projeto inclui um framework de agentes simples e auto-contido (ADK) e um protocolo de contexto compartilhado (MCP). Estes não são bibliotecas externas e não requerem instalação separada.
-
-- **ADK (Agent Development Kit):** Uma classe base `Agent` (`src/adk/agent.py`) fornece uma interface comum para todos os agentes.
-- **MCP (Model Context Protocol):** Uma classe simples `MCP` (`src/adk/mcp.py`) é usada para compartilhar estado e contexto entre os agentes.
-
-## Estrutura do Projeto
+## 🗂️ Estrutura do Projeto
 
 ```
 .
 ├── LICENSE
 ├── README.md
 ├── app
-│   └── main.py         # Aplicação Streamlit
+│   └── main.py               # Aplicação Streamlit
 ├── requirements.txt
 ├── src
-│   ├── __init__.py
-│   ├── adk
-│   │   ├── __init__.py
-│   │   ├── agent.py      # Classe base de agente
-│   │   └── mcp.py        # Protocolo de contexto compartilhado
-│   └── agents
-│       ├── __init__.py
-│       ├── anakin.py     # Anakin Skywalker (Orquestrador)
-│       ├── c3po.py       # C-3PO (Analítico)
-│       └── r2d2.py       # R2-D2 (Técnico)
+│   ├── __init__.py
+│   ├── adk
+│   │   ├── __init__.py
+│   │   ├── agent.py          # Classe base de agente
+│   │   └── mcp.py            # Protocolo de contexto compartilhado
+│   └── agents
+│       ├── __init__.py
+│       ├── anakin.py         # Anakin Skywalker (Orquestrador)
+│       ├── c3po.py           # C-3PO (Analítico)
+│       └── r2d2.py           # R2-D2 (Técnico)
 └── tests
-    └── test_agents.py    # Testes unitários dos agentes
+    └── test_agents.py        # Testes unitários dos agentes
 ```
 
-## Os Agentes
+## 📚 Aprendizados
+- Modelagem de agentes com ADK
+- Comunicação entre agentes via MCP
+- Integração de LLMs com agentes temáticos
+- Interface interativa com Streamlit
+- Design de sistemas multiagente com propósito narrativo
 
-### Anakin Skywalker (Orquestrador)
+## 👩‍💻 Autora
 
-Anakin atua como o orquestrador central do sistema. Ele recebe a entrada do usuário e, com base em palavras-chave, decide qual agente é mais adequado para lidar com a solicitação.
+📫 [LinkedIn](https://www.linkedin.com/in/alineassuncaoai/)  
+📬 aline.jassuncao@gmail.com
 
-### C-3PO (Agente Analítico)
+---
 
-C-3PO é especializado em fornecer respostas formais e analíticas. Ele é acionado por palavras-chave como "risco", "perigo" ou "formal".
+> _"A imaginação é o combustível da inovação. E aqui, ela vem com sabres de luz e agentes inteligentes."_ 
 
-### R2-D2 (Agente Técnico)
 
-R2-D2 fornece respostas concisas e técnicas, muitas vezes na forma de bipes e sons (com traduções em português entre parênteses). Ele é acionado por palavras-chave como "técnico", "dados" ou "código".
+
+
