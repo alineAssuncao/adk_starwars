@@ -98,6 +98,8 @@ streamlit run app/main.py
 - Design de sistemas multiagente com propósito narrativo
 
 ## 👩‍💻 Autora
+Aline Assunção
+Engenheira de Qualidade em transição para Inteligência Artificial
 
 📫 [LinkedIn](https://www.linkedin.com/in/alineassuncaoai/)  
 📬 aline.jassuncao@gmail.com
